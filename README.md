@@ -1,5 +1,9 @@
 # `@depot/connectrpc-workers`
 
+[![CI](https://github.com/depot/connectrpc-workers/actions/workflows/ci.yml/badge.svg)](https://github.com/depot/connectrpc-workers/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/connectrpc-workers.svg)](https://www.npmjs.com/package/connectrpc-workers)
+![Powered by TypeScript](https://img.shields.io/badge/powered%20by-typescript-blue.svg)
+
 A [Connect RPC](https://connectrpc.com/) adapter for [Cloudflare Workers](https://workers.cloudflare.com/).
 
 ## Installation
