@@ -1,0 +1,64 @@
+{
+  "name": "@depot/connectrpc-workers",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Connect RPC adapter for Cloudflare Workers",
+  "repository": "https://github.com/depot/connectrpc-workers.git",
+  "homepage": "https://github.com/depot/connectrpc-workers",
+  "author": "Jacob Gillespie <jacobwgillespie@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@8.15.6",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "connectrpc",
+    "cloudflare",
+    "workers"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "clean": "rm -rf dist",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
+    "lint": "eslint --cache --cache-location node_modules/.cache/.eslintcache .",
+    "lint:fix": "eslint --cache --cache-location node_modules/.cache/.eslintcache --fix .",
+    "prepack": "pnpm run build",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-types": "*",
+    "@connectrpc/connect": ">=1.4.0 <2.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "@connectrpc/connect": "^1.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-pkg": "^0.18.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "prettier": {
+    "bracketSpacing": false,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "plugins": [
+      "prettier-plugin-pkg",
+      "prettier-plugin-organize-imports"
+    ]
+  }
+}

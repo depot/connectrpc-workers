@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "client": "tsx src/client.ts",
+    "generate": "buf generate --include-imports && prettier --write src/proto",
+    "server": "wrangler dev",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^1.8.0",
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "@connectrpc/connect": "^1.4.0",
+    "@connectrpc/connect-node": "^1.4.0"
+  },
+  "devDependencies": {
+    "@bufbuild/protoc-gen-es": "^1.8.0",
+    "@connectrpc/protoc-gen-connect-es": "^1.4.0",
+    "@types/node": "^20.12.7",
+    "esbuild": "^0.20.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5",
+    "wrangler": "^3.50.0"
+  }
+}

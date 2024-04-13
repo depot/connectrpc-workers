@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package example.v1;
+
+service ExampleService {
+  rpc HelloUnary(HelloUnaryRequest) returns (HelloUnaryResponse);
+  rpc HelloClientStream(stream HelloClientStreamRequest) returns (HelloClientStreamResponse);
+  rpc HelloServerStream(HelloServerStreamRequest) returns (stream HelloServerStreamResponse);
+  rpc HelloBiDiStream(stream HelloBiDiStreamRequest) returns (stream HelloBiDiStreamResponse);
+}
+
+message HelloUnaryRequest {
+  string name = 1;
+}
+
+message HelloUnaryResponse {
+  string greeting = 1;
+}
+
+message HelloClientStreamRequest {
+  string name = 1;
+}
+
+message HelloClientStreamResponse {
+  string greeting = 1;
+}
+
+message HelloServerStreamRequest {
+  string name = 1;
+}
+
+message HelloServerStreamResponse {
+  string greeting = 1;
+}
+
+message HelloBiDiStreamRequest {
+  string name = 1;
+}
+
+message HelloBiDiStreamResponse {
+  string greeting = 1;
+}

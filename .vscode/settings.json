@@ -1,0 +1,11 @@
+{
+  "npm.packageManager": "pnpm",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.prettierPath": "node_modules/prettier/index.cjs",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.lintTask.enable": true,
+  "eslint.lintTask.options": "--cache --cache-location node_modules/.cache/.eslintcache ."
+}
