@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import {createPromiseClient} from '@connectrpc/connect'
 import {createConnectTransport} from '@connectrpc/connect-node'
 import {ExampleService} from './proto/example/v1/example_connect'
