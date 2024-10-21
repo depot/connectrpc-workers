@@ -67,7 +67,8 @@ export function connectWorkersAdapter<Env = unknown, CfHostMetadata = unknown>(
     const handler = paths.get(new URL(request.url).pathname)
     if (!handler) return options.fallback ? options.fallback(request, env, context) : notFoundResponse
 
-    const universalRequest: UniversalServerRequest = requestToUniversalRequest(request)
+    const contextValues = options.contextValues?.(request, env, context)
+    const universalRequest: UniversalServerRequest = requestToUniversalRequest(request, contextValues)
     const universalResponse = await handler(universalRequest)
 
     return universalResponseToResponse(universalResponse)
@@ -78,7 +79,7 @@ export function connectWorkersAdapter<Env = unknown, CfHostMetadata = unknown>(
 
 // Utils **********************************************************************
 
-function requestToUniversalRequest(request: Request): UniversalServerRequest {
+function requestToUniversalRequest(request: Request, contextValues?: ContextValues): UniversalServerRequest {
   const httpVersion = request.cf?.httpProtocol === 'HTTP/2' ? '2.0' : '1.1'
   return {
     httpVersion: httpVersion,
@@ -87,6 +88,7 @@ function requestToUniversalRequest(request: Request): UniversalServerRequest {
     header: request.headers,
     body: request.body,
     signal: request.signal,
+    contextValues,
   }
 }
 
