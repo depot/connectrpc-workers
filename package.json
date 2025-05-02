@@ -1,6 +1,6 @@
 {
   "name": "@depot/connectrpc-workers",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "type": "module",
   "description": "Connect RPC adapter for Cloudflare Workers",
   "repository": "https://github.com/depot/connectrpc-workers.git",
@@ -10,8 +10,14 @@
   "packageManager": "pnpm@10.10.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
-  "keywords": ["connectrpc", "cloudflare", "workers"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "connectrpc",
+    "cloudflare",
+    "workers"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "clean": "rm -rf dist",
