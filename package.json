@@ -10,14 +10,8 @@
   "packageManager": "pnpm@10.10.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "connectrpc",
-    "cloudflare",
-    "workers"
-  ],
+  "files": ["dist"],
+  "keywords": ["connectrpc", "cloudflare", "workers"],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "clean": "rm -rf dist",
