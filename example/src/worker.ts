@@ -1,7 +1,6 @@
-import type {ExportedHandler} from '@cloudflare/workers-types'
 import type {ConnectRouter, ServiceImpl} from '@connectrpc/connect'
 import {connectWorkersAdapter} from '../..'
-import {ExampleService} from './proto/example/v1/example_connect'
+import {ExampleService} from './proto/example/v1/example_pb'
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 

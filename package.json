@@ -7,52 +7,33 @@
   "homepage": "https://github.com/depot/connectrpc-workers",
   "author": "Jacob Gillespie <jacobwgillespie@gmail.com>",
   "license": "MIT",
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@10.10.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "connectrpc",
-    "cloudflare",
-    "workers"
-  ],
+  "files": ["dist"],
+  "keywords": ["connectrpc", "cloudflare", "workers"],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "clean": "rm -rf dist",
-    "fmt": "prettier --write .",
-    "fmt:check": "prettier --check .",
+    "lint": "biome check",
+    "lint:fix": "biome check --fix",
     "prepack": "pnpm run build",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@bufbuild/protobuf": ">=1.10.0 <2.0.0",
+    "@bufbuild/protobuf": ">=2.0.0 <3.0.0",
     "@cloudflare/workers-types": "*",
-    "@connectrpc/connect": ">=1.5.0 <2.0.0"
+    "@connectrpc/connect": ">=2.0.0 <3.0.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240925.0",
-    "@connectrpc/connect": "^1.5.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "prettier-plugin-pkg": "^0.18.1",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.2"
+    "@biomejs/biome": "^1.9.4",
+    "@cloudflare/workers-types": "^4.20250502.0",
+    "@connectrpc/connect": "^2.0.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": false,
-  "prettier": {
-    "bracketSpacing": false,
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "plugins": [
-      "prettier-plugin-pkg",
-      "prettier-plugin-organize-imports"
-    ]
-  }
+  "sideEffects": false
 }
