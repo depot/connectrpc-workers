@@ -1,8 +1,8 @@
 /// <reference types="node" />
 
-import {createPromiseClient} from '@connectrpc/connect'
+import {createClient} from '@connectrpc/connect'
 import {createConnectTransport} from '@connectrpc/connect-node'
-import {ExampleService} from './proto/example/v1/example_connect'
+import {ExampleService} from './proto/example/v1/example_pb'
 
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:8787'
 const httpVersion = BASE_URL.startsWith('https') ? '2' : '1.1'
@@ -12,7 +12,7 @@ const transport = createConnectTransport({
   baseUrl: BASE_URL,
 })
 
-const client = createPromiseClient(ExampleService, transport)
+const client = createClient(ExampleService, transport)
 
 async function main() {
   console.log(`Connecting to ${BASE_URL} (HTTP/${httpVersion})`)
